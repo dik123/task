@@ -22,3 +22,4 @@ Then open in browser ./dist/client/index.html
 # Still have to implement:
 1. Tests (just need a little more time for this)
 2. Perfomance testing
+3. Finish and optimize memory management
