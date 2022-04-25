@@ -1,11 +1,17 @@
+# Instal dependencies
 
-# Building and starting of server 
+```
+npm i
+```
+
+
+# Building and starting the server 
 
 ```
 npm start
 ```
 
-# Building and starting of client 
+# Building and starting the client 
 
 ```
 npm run build-client
