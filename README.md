@@ -23,3 +23,4 @@ Then open in browser ./dist/client/index.html
 1. Tests (just need a little more time for this)
 2. Perfomance testing
 3. Finish and optimize memory management
+4. Move constants to the configuration file
