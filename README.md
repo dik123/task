@@ -1,4 +1,4 @@
-# Instal dependencies
+# Installing dependencies
 
 ```
 npm i
