@@ -5,6 +5,12 @@ export default class SubscribedMessage extends BaseMessage {
         return "subscribed";
     }
 
+    /**
+     * This message will be delayed for 4 seconds before 
+     * will be sent to client
+     * 
+     * @returns number
+     */
     getDelay(): number {
         return 4000;
     }

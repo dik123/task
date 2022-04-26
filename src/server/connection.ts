@@ -3,10 +3,15 @@ import { Message } from "../common/message";
 import { BaseMessage } from '../common/messages/base';
 import ErrorMessage from '../common/messages/error';
 
+export interface ConnectionInterface {
+    sendIfExpectedAt: (time: number) => void;
+    isAvailable: () => boolean;
+};
+
 /**
  * Cover class for WebSocket
  */
-export class Connection {
+export class Connection implements ConnectionInterface{
     webSocket: WebSocket;
     private message?: BaseMessage;
     private expectedSendTime: number = 0;
@@ -21,7 +26,7 @@ export class Connection {
      *
      * @param time 
      */
-    sendIfExpectedAt(time: number) {
+    sendIfExpectedAt(time: number): void {
         if (this.webSocket.readyState !== WebSocket.OPEN) {
             return;
         }
@@ -45,7 +50,7 @@ export class Connection {
      * 
      * @returns 
      */
-    isAvailable() {
+    isAvailable(): boolean {
         switch(this.webSocket.readyState) {
             case WebSocket.OPEN:
             case WebSocket.CONNECTING:
