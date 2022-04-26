@@ -39,7 +39,7 @@ describe("queue page", () => {
 
             queuePage.sendIfExpectedAt(0);
 
-            // Was sent only to available and exectly once
+            // Was sent only to available and exactly once
             queuePage.getConnections().forEach(connection => {
                 expect((connection as TestConnection).sentCount).toEqual(connection.isAvailable() ? 1 : 0);    
             });
