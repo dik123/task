@@ -67,7 +67,7 @@ export default class QueuePage {
             newLength += srcCount;
             dstIndex = currIndex
 
-        // This check to not maintain state (now checking active or inactive)
+        // This check here is to not maintain state (checking active or inactive)
         // and check it on each iteration
         } while (currIndex < this.lastAvailableIndex);
         this.lastAvailableIndex  = newLength;
