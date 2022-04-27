@@ -63,7 +63,9 @@ export default class QueuePage {
                 srcCount++;
             }
 
-            this.connections.copyWithin(dstIndex, srcIndex, srcIndex + srcCount);
+            if (dstIndex !== srcIndex && srcCount !== 0) {
+                this.connections.copyWithin(dstIndex, srcIndex, srcIndex + srcCount);
+            }
             newLength += srcCount;
             dstIndex = currIndex
 
