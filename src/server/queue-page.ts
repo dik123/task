@@ -47,12 +47,13 @@ export default class QueuePage {
             }
 
             // We will copy staring from position of first active connection
+            // back to starting position of first closed connection
             let srcIndex = currIndex;
             
-            // Count of actiove connections to copy
+            // Count of active connections to copy
             let srcCount = 0;
 
-            // Find how many active connections availbale one by one
+            // Find how many active connections are availbale in a row
             for (; currIndex < this.lastAvailableIndex; currIndex++) {
                 const connection = this.connections[currIndex];
                 if (!connection.isAvailable()) {
@@ -63,6 +64,7 @@ export default class QueuePage {
                 srcCount++;
             }
 
+            // Copy batch of available conection in place of closed connection
             if (dstIndex !== srcIndex && srcCount !== 0) {
                 this.connections.copyWithin(dstIndex, srcIndex, srcIndex + srcCount);
             }
