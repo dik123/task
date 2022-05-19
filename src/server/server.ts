@@ -71,7 +71,7 @@ export default class Server {
      * @param resolve 
      */
     private iterateConnections(startTime: number, pagesIterator: Generator<QueuePage>, resolve: Function) {
-      process.nextTick(() => {
+      setImmediate(() => {
         const result = pagesIterator.next();
         if (result.value) {
           // Send all sheduled messages for all active connections on current queue page
